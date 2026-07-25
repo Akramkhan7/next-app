@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +25,36 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header>
-          <nav>
-            <Link href="/">Home</Link>
-            {" | "}
-            <Link href="/products">Products</Link>
+        <header
+          style={{
+            display: "flex",
+            alignItems: "center",
+            padding: "16px 24px",
+            backgroundColor: "#fe6f34ff",
+            gap: "20px",
+          }}
+        >
+          <Image src="/images/logo.png" width={50} height={50} alt="Logo" />
+
+          <nav
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+            }}
+          >
+            <Link
+              href="/"
+              style={{ color: "#fff", textDecoration: "none", fontWeight: 500 }}
+            >
+              Home
+            </Link>
+            <Link
+              href="/products"
+              style={{ color: "#fff", textDecoration: "none", fontWeight: 500 }}
+            >
+              Products
+            </Link>
           </nav>
         </header>
         {children}
