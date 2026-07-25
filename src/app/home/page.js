@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
   async function onLogOutHandler(e) {
     e.preventDefault();
 
-    const res = await fetch("/api/login/logout", {
+    const res = await fetch("/api/logout", {
       method: "POST",
     });
 
