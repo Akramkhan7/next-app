@@ -1,11 +1,12 @@
-import Image from "next/image";
-import Dashboard from "./dashboard/page";
+export const metadata = {
+  title: "This is Homepage",
+  description: "A simple Next.js app demonstrating static and dynamic metadata.",
+};
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <h1>Welcome to the Products Store</h1>
-      <Dashboard />
-    </>
+    <div>
+      <h1>Welcome to the Homepage</h1>
+    </div>
   );
 }
